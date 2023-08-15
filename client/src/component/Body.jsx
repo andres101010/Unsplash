@@ -3,8 +3,13 @@ import { useEffect, useState } from 'react';
 import { sendAllImage } from '../servicesAxios/controlador';
 const Body = () => {
     const [img, setImag] = useState([]);
+    const getData = async () =>{
+        const response = await sendAllImage()
+        setImag(response)
+        console.log(response)
+    }
     useEffect(()=>{
-     setImag(sendAllImage())
+     getData()
     },[])
     console.log(img)
   return (

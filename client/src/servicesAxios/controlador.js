@@ -1,5 +1,5 @@
 import axios from 'axios';
-export const sendAllImage = () => {
-   const result = axios.get('https://unplash.onrender.com/sendImage')
+export const sendAllImage = async () => {
+   const result = await axios.get('https://unplash.onrender.com/sendImage')
    return result
 }
