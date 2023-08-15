@@ -8,9 +8,11 @@ const createTable = require('../src/models/image')
 const PORT = process.env.PORT || 4000;
 
 createTable()
-app.use(cors)
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(cors({
+    origin: '*'
+}));
 
 app.use('/', routes)
 
